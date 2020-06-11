@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <link href="imgs/pizza-logo-vector_25327-119.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container" style=" margin-top: 1rem">
+                <div class="navbar-header ">
+                    <a href="Default.aspx" hreflang="#">
+                        <img src="imgs/pizza-logo-vector_25327-119.jpg" width="40" height="40"/>
+                        <b class="mr-4">PizzaCut</b>           
+
+                   </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <small>
+                    <a href ="About.aspx" style="color:white"> About Us</a>&nbsp;&nbsp;
+                    <a href ="Contact.aspx" style="color:white"> Contact Us</a>
+                    </small>
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer style="background-color:#333333">
+                <p><h4 style="color:#ffffff"> &copy; <%: DateTime.Now.Year %> - PizzaCut Chiller Temp - Ankit Rajput - 30017019</h4></p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
